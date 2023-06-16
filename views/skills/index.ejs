@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>  
+
+  <ul>
+    <% skills.forEach(function(s) { %>
+      <li>
+        <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+          - 
+        <%= s.proficient ? 'proficient' : 'not proficient' %>
+      </li>
+    <% }); %>
+  </ul>
+
+<ul>
+  <% skills.forEach((skill, index) => { %>
+    <li>
+      <%= skill %>
+      <form action="/skills/<%= index %>/delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<a href="/skills/new">Add Skill</a>
+
+<%- include('../partials/footer') %>

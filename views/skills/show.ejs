@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+    <h3><%= skill.skill %></h3>
+    <h3>Proficient: <%= skill.proficient ? 'Yes' : 'No' %></h3>
+
+    <h1>Skill Details</h1>
+    <p>Skill: <%= skill %></p>
+    <form action="/skills/<%= id %>/delete" method="post">
+        <button type="submit">Delete Skill</button>
+    </form>
+
+<%- include('../partials/footer') %> 
